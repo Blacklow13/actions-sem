@@ -16,7 +16,7 @@ jobs:
       - name: Great students
         run: echo "HI ${{inputs.student_name}}"
       - name: Run number
-        run: echo "$GITHUB_RUN_NUMBER" echo "GITHUB_ACTOR"
+        run: echo "$GITHUB_RUN_NUMBER" echo "$GITHUB_ACTOR"
       # TODO:
       # 1. Добавь шаг, который выводит приветствие для inputs.student_name
       # 2. Попробуй дополнительно вывести номер запуска: GITHUB_RUN_NUMBER

@@ -25,7 +25,23 @@ jobs:
       - name: Run tests
         run: gradle test
   test-pull-request:
+    runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
+  steps:
+      - name: Download repository files
+        uses: actions/checkout@v4
+
+      - name: Install Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: add rights
+        run: chmod +x gradlew && ./gradlew build
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Run tests
+        run: gradle test
 
       # TODO:
       # 1. Добавь шаг для настройки Gradle.
