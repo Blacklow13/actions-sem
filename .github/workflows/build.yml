@@ -24,6 +24,8 @@ jobs:
         run: ./gradlew build
       - name: Run tests
         run: gradle test
+  test-pull-request:
+    if: github.event_name == 'pull_request'
 
       # TODO:
       # 1. Добавь шаг для настройки Gradle.
