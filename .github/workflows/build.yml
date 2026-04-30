@@ -27,7 +27,7 @@ jobs:
   test-pull-request:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
-  steps:
+    steps:
       - name: Download repository files
         uses: actions/checkout@v4
 
