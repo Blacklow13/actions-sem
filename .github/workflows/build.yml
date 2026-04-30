@@ -1,0 +1,25 @@
+name: Build and Test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository files
+        uses: actions/checkout@v4
+
+      - name: Install Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # TODO:
+      # 1. Добавь шаг для настройки Gradle.
+      # 2. Добавь шаг, который запускает тесты командой gradle test.
+      # 3. Добавь событие pull_request.
+      # 4. Добавь отдельную job, которая срабатывает только при открытии pull request.

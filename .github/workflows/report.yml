@@ -1,0 +1,19 @@
+https://github:
+  com/k1mo-rubik/actions-sem:
+    git:
+name: Create Report Artifact
+
+on:
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository files
+        uses: actions/checkout@v4
+
+      # TODO:
+      # 1. Запусти bash-скрипт scripts/create-summary.sh
+      # 2. Сохрани файл build/reports/seminar-summary.txt как artifact

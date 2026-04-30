@@ -1,0 +1,18 @@
+name: Manual Greeting
+
+on:
+  workflow_dispatch:
+    inputs:
+      student_name:
+        description: "Имя ученика для приветствия"
+        required: true
+        default: "Школьник"
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      # TODO:
+      # 1. Добавь шаг, который выводит приветствие для inputs.student_name
+      # 2. Попробуй дополнительно вывести номер запуска: GITHUB_RUN_NUMBER
