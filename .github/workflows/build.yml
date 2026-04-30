@@ -3,6 +3,7 @@ name: Build and Test
 on:
   push:
   workflow_dispatch:
+  pull_request:
 
 jobs:
   test:
@@ -17,9 +18,14 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Run tests
+        run: gradle test
 
       # TODO:
       # 1. Добавь шаг для настройки Gradle.
       # 2. Добавь шаг, который запускает тесты командой gradle test.
       # 3. Добавь событие pull_request.
       # 4. Добавь отдельную job, которая срабатывает только при открытии pull request.
+
