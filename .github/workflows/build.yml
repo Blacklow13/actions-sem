@@ -18,8 +18,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-      - name: add rights
-        run: chmod +x build.yml
+
       - name: Build with Gradle
         run: ./gradlew build
       - name: Run tests
